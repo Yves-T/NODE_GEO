@@ -1,0 +1,84 @@
+<div class="medium-5 columns">
+    <div>
+
+        <div class="top-bar">
+            <h2 class="panel-title text-center">Voeg je toe aan het ontwikkelaar team
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </h2>
+        </div>
+
+        <div ng-show="showMessage">
+            <div class="callout success">
+                <h5>Bedankt om lid te worden</h5>
+                <p>Je kan je map marker nu zien op de kaart. Team mates zoeken kan in de zoek
+                    <a href="/#/find">teammates</a> tab</p>
+
+            </div>
+        </div>
+
+        <div ng-show="showForm">
+
+            <form name="addForm" novalidate>
+
+                <div>
+                    <label for="username">Gebruikersnaam
+                        <span ng-show="addForm.$invalid" class="label">Alle velden verplicht</span>
+                        <input type="text" id="username" placeholder="Gouweouwe" ng-model="formData.username" required>
+                    </label>
+                </div>
+                <div class="row">
+                    <fieldset class="large-12 columns">
+                        <legend>Geslacht</legend>
+
+                        <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
+                        <label for="radiomale">Man</label>
+
+
+                        <input type="radio" name="optionsRadios" id="radiofemale" value="Female"
+                               ng-model="formData.gender">
+                        <label for="radiofemale">Vrouw</label>
+
+
+                        <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?"
+                               ng-model="formData.gender">
+                        <label for="radioother">Wens dit niet mee te delen</label>
+
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="age">Leeftijd
+                        <input type="number" id="age" placeholder="72" ng-model="formData.age" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="language">Favoriete programmeertaal
+                        <input type="text" id="language" placeholder="Cobol" ng-model="formData.favlang" required>
+                    </label>
+                </div>
+                <div>
+                    <label for="latitude">Breedtegraad
+                        <input type="text" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                    </label>
+                </div>
+                <div>
+                    <label for="longitude">Lengtegraad
+                        <input type="text" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                    </label>
+                </div>
+                <div>
+                    <label for="verified">HTML5 gecontroleerde locatie?&nbsp;
+                        <button class="small secondary hollow button" ng-click="refreshLocation()"><i
+                                class="fa fa-refresh"></i></button>
+                        <input type="text" id="verified" placeholder="Nee (Bedankt om mijn map te spammen...)"
+                               ng-model="formData.htmlverified" readonly>
+                    </label>
+                </div>
+                <button type="submit" ng-click="createUser()" class="alert button expanded"
+                        ng-disabled="addForm.$invalid">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

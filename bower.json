@@ -1,0 +1,8 @@
+{
+  "name": "Ontwikkelaar geo app",
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angularjs-geolocation": "^0.1.1",
+    "modernizr": "^3.3.1"
+  }
+}

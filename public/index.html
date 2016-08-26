@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" ng-app="meanMapApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ontwikkelaar geo map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/app.js"></script>
+</head>
+
+<body ng-controller="addCtrl">
+<div class="container">
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">Ontwikkelaar map app</li>
+                <li ng-class="{active: page == 'join'}"><a href="/#/join">Wordt lid</a></li>
+                <li ng-class="{active: page == 'find'}"><a href="/#/find">Zoek teammates</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row content">
+
+        <div class="medium-7 columns">
+            <div id="map" style="width:645px; height:645px"></div>
+        </div>
+
+        <div ng-view></div>
+        <hr/>
+
+        <div class="footer">
+            <p class="text-center"><i class="fa fa-check" aria-hidden="true"></i> De ontwikkelaar
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

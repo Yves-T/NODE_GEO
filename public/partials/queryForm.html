@@ -1,0 +1,85 @@
+<!-- queryForm.html -->
+
+<!-- Find Teammates (Query) Form -->
+<div class="medium-5 columns">
+
+
+    <div>
+
+
+        <div class="top-bar">
+            <h2 class="panel-title text-center">Zoek teammates! <i class="fa fa-search"></i></h2>
+        </div>
+
+
+        <div class="panel-body">
+
+
+            <form name="queryForm">
+
+
+                <div>
+                    <label for="latitude"> Breedtegraad
+                        <input type="text" id="latitude" placeholder="39.5" ng-model="formData.latitude" readonly>
+                    </label>
+                </div>
+                <div>
+                    <label for="longitude">Lengtegraad
+                        <input type="text" id="longitude" placeholder="-98.35" ng-model="formData.longitude" readonly>
+                    </label>
+                </div>
+                <div>
+                    <label for="distance">Max. Afstand (km)
+                        <span ng-show="queryForm.$invalid" class="label">Dit veld is verplicht</span>
+                        <input type="text" id="distance" placeholder="500" ng-model="formData.distance" required>
+                    </label>
+                </div>
+
+                <fieldset class="large-12 columns">
+                    <legend>Geslacht</legend>
+                    <input type="checkbox" name="optionsRadios" id="checkmale" value="Male" ng-model="formData.male"
+                           ng-true-value="'Male'">
+                    <label for="checkmale">Man</label>
+                    <input type="checkbox" name="optionsRadios" id="checkfemale" value="Female"
+                           ng-model="formData.female" ng-true-value="'Female'">
+                    <label for="checkfemale">Vrouw</label>
+                    <input type="checkbox" name="optionsRadios" id="checkother" value="What's it to ya?"
+                           ng-model="formData.other" ng-true-value="'What\'s it to ya?'">
+                    <label for="checkother">Wens dit niet mee te delen</label>
+                </fieldset>
+                <div>
+                    <label for="minage">Min. Leeftijd
+                        <input type="number" id="minage" placeholder="5" ng-model="formData.minage">
+                    </label>
+                </div>
+                <div>
+                    <label for="maxage">Max Leeftijd
+                        <input type="number" id="maxage" placeholder="80" ng-model="formData.maxage">
+                    </label>
+                </div>
+                <div>
+                    <label for="favlang">Favoriete programmeertaal
+                        <input type="text" id="favlang" placeholder="Fortran" ng-model="formData.favlang">
+                    </label>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="verified" id="radiomale" value="True"
+                                   ng-model="formData.verified"> <strong>Alleen HTML5 gecontroleerde Locaties toevoegen
+                            ?</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="alert button expanded" ng-click="queryUsers()"
+                        ng-disabled="queryForm.$invalid">Zoek
+                </button>
+            </form>
+        </div>
+
+        <div ng-show="queryCount>0" class="panel-footer">
+            <p class="text-center">We hebben {{queryCount}} teammates gevonden.</p>
+        </div>
+    </div>
+</div>
