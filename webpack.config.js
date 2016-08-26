@@ -64,7 +64,6 @@ module.exports = {
         app: ['./public/angular/app.js'],
         vendor: [
             'jquery',
-            'angular-route',
             'angular'
         ]
     },
@@ -75,6 +74,9 @@ module.exports = {
         publicPath: '/assets/',
     },
     plugins: plugins,
+    node: {
+        fs: "empty"
+    },
     module: {
         loaders: [{
             test: /\.js$/,
@@ -110,6 +112,8 @@ module.exports = {
         }, {
             test: /\.(png|gif|jpe?g|svg)$/i,
             loader: 'url?limit=10000'
-        }]
+        },
+        { test: /\.json$/, loader: 'json-loader' }
+      ]
     }
 };
