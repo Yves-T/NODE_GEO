@@ -2,7 +2,6 @@ var webpack = require('webpack');
 
 var CleanPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CompressionPlugin = require("compression-webpack-plugin");
 var production = process.env.NODE_ENV === 'production';
 
 var plugins = [
